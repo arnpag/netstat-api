@@ -1,0 +1,16 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: aaron
+    preCondiditions:
+      onFail: MARK_RAN
+      not:
+        tableExists:
+          tableName: test
+          columns:
+          - column:
+            name: id
+            type: VARCHAR(12)
+          - column:
+            name: data
+            type: VARCHAR(128)
